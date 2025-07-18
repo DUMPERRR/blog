@@ -233,3 +233,155 @@ DDD属于自己的内容，只是一些零散的心得，如果用原理、原�
 《软件方法》（ http://umlchina.com/url/softmeth2025.html）第1章：
 
 <img width="1080" height="293" alt="image" src="https://github.com/user-attachments/assets/f26aad50-3683-42cb-b846-fb0c5ad2b3b0" />
+
+评Thoughtworks 首席咨询师林宁的《OOP 和 DDD 其实就是对现实的比喻》
+
+Thoughtworks 首席咨询师林宁最近写了一篇《OOP 和 DDD 其实就是对现实的比喻》（https://mp.weixin.qq.com/s/zUJHjPMDbjURUiMrO9myzA），以下文字“打动”了我，让我写了这篇文章。括号里是我对相关文字的第一反应。
+
+*类可以对应现实中的一个概念（潘：现实是现实，概念是概念），很多（潘：看过多少本？）面向对象的书籍并没有点破这一点（潘：这是要创新啊）。
+
+*如果开发一款游戏（潘：认为游戏类软件的“面向对象”有别于其他软件），对象貌似（潘：貌似？）都是有生命（潘：有生命的定义是？都是有生命，俄罗斯方块的方块算有生命吧？）的。但是对于普通的管理系统（潘：不普通的管理系统的“面向对象”又是怎样的？）来说，真正需要设计的是”货物管理者”，“收银员”这类对象（潘：这就是所得的创新？按这个说法，设计电梯控制系统时，真正需要设计的是“乘客”对象），而”货物”这类实体就应该让它们安安静静的躺在那里（潘：俄罗斯方块的方块是有生命呢？还是躺平？）。使用面向对象越久，越会下意识的使用（潘：厉害！）面向对象思考现实，面向对象（潘：把自己的“创新”叫什么都行，何必硬要说这是面向对象呢？）是程序员进入哲学世界（潘：上升到哲学，厉害++）的启蒙课。
+
+**********
+
+如果只是随便写写个人见解，我不会专门写文章批评，但林宁的头衔是“Thoughtworks 首席咨询师”：
+
+https://www.thoughtworks.com/zh-cn/profiles/l/ning_lin
+
+<img width="1080" height="992" alt="image" src="https://github.com/user-attachments/assets/b6c7c810-08fe-4db4-9ce1-604ee1b96079" />
+
+而且林宁在文章的结尾说到：
+
+*作者提供咨询服务，如果您遇到管理或者职场（潘：啊？不是OOP、DDD？）的问题，欢迎一起聊聊。
+
+既然要布道，那就有必要说一说了。
+
+邻居大爷坚持认为“张三和李四一前一后走，张三突然转身撞到李四，张三倒地受伤，这个情况李四该赔，谁让李四没保持安全距离！”，这是邻居大爷的自由。
+
+如果法律人用这样的例子给大众普法，那就有必要说一说了。
+
+碰巧，我也是UMLChina首席专家，我也提供咨询服务（但我的服务范围窄得很，仅限于需求和设计方法学，不像林宁的范围这么博大）。所以，也欢迎大家严厉地审查我写的书和文章。对此，我在以下文章已说过我的观点。如果您忍不住想要对我说什么，可以先看一下。
+
+*你的医书是假的！，https://mp.weixin.qq.com/s/PbzMuEXhf1iuAWF5n4ezTQ，看“一、说在前面”部分。
+
+*DDD话术：“你说得对，但是……，https://mp.weixin.qq.com/s/Ga1NLFGvb-ePAHmHm6y4dg，在文中搜“悟道和念经”。
+
+**********
+
+如果有人在展示自己的解题过程中写了“主=6”，大概率这个解题过程还有别的问题，例如u写成μ、漏了“·”符号，该写成下标的没有写成下标。
+
+因此，本文并不打算一开始就直接剖析本文开头所摘的“打动”我的内容，而是从第一段开始，逐段逐段评点其中的错误，也借此机会再翻书复习和学习。
+
+如果您特别关注本文开头所摘的那几句，可以看我写的书和“DDD领域驱动设计批评”序列文章，看我曾写过的内容对林宁的文章有多少命中率，重点可以看：
+
+*《软件方法》第8章， http://umlchina.com/url/softmeth2025.html，可以过一遍，看哪些地方刚好点到了，例如：
+
+<img width="1080" height="350" alt="image" src="https://github.com/user-attachments/assets/23cd72fc-d88c-418b-a86f-31af9d3cfc04" />
+
+*《实现领域驱动设计》中译本和原文的评点纠错合集，https://mp.weixin.qq.com/s/DYop7IcxuFOO_CSTbgE5Eg，在里面搜“（1）客观规律”，从那个地方开始看。
+
+看完之后，再回头看看林宁的文章。
+
+**********
+
+开始逐段剖析之前，可以先看我之前写的文章：
+
+* 为什么要对术语"吹毛求疵"，https://mp.weixin.qq.com/s/a1_UCtZZmCGigyYTivOqdA
+
+**********
+
+下面开始逐段剖析，我把要评点的地方标了号。
+
+第一段
+
+<img width="1080" height="232" alt="image" src="https://github.com/user-attachments/assets/842b4593-988b-429d-9bc2-8d270caa8cf7" />
+
+①和机器语言一样，面向过程的语言……
+
+把“面向过程的语言”和“机器语言”拎出来对比，这是不恰当的。
+
+编程语言通常按抽象级别分类为低级语言（机器语言、汇编语言）和高级语言。
+
+过程式编程（Procedural Programming）面向对象编程（Object-Oriented Programming）、函数式编程（Functional Programming）等通常说的是高级语言的不同编程范式（Programming Paradigm）。从低级语言的子类里挑一个“机器语言”，从“高级语言”的“范式”泛化集的子类里挑一个“面向过程语言”，两者放在一起对比，这是什么意思？
+
+我们来看B站搜出来的2025软考视频（其实是前几年的）：
+
+<img width="1080" height="597" alt="image" src="https://github.com/user-attachments/assets/f7775f21-7880-4895-b591-6f0a0358bde4" />
+
+<img width="1080" height="614" alt="image" src="https://github.com/user-attachments/assets/95175b30-c855-49e6-bea4-a2e970426818" />
+
+如果觉得软考视频太low，也可以看高大上一些的：
+
+*SWEBOK的Low-Level Programming Languages、High-Level Programming Languages词条。我没有见过SWEBOK有正式的中文版出版。
+
+*《编码的奥秘》，Charles Petzold
+
+<img width="1080" height="1020" alt="image" src="https://github.com/user-attachments/assets/508556fe-46a9-4d22-8552-cbc8932a2fc0" />
+
+*《程序设计语言：实践之路》，Michael L. Scott 
+
+<img width="1080" height="952" alt="image" src="https://github.com/user-attachments/assets/c1d2f554-3949-411b-80f2-5addc15e04e2" />
+
+*《汇编语言基础教程》，James T. Streib：
+
+<img width="1080" height="463" alt="image" src="https://github.com/user-attachments/assets/425a5d8a-4891-4704-99b9-61e9d926c1ca" />
+
+★以上资料对语言的分类不完全相同，但分类体系是明显的。
+
+★在这里展开说一下，以免有人抬杠：现在都是领域驱动设计革命性创新划时代洞见的年代了，C语言还高级语言呢？ 
+
+低级语言、高级语言历史传承的名称，例如我们说“微机”，想到的是这样的：
+
+<img width="448" height="320" alt="image" src="https://github.com/user-attachments/assets/699d1a01-58d0-4edd-be25-4cb943445feb" />
+
+同样，1280*720就算高清，特快（T）列车现在已经不快。
+
+但是，我认为编程语言的发展没有达到把20年前还被称为“高级语言”的语言打成“低级语言”的地步。
+
+②面向过程的语言依然还是……
+
+结合上标题，意思是面向对象就不是了呗？
+
+③图灵模型
+
+其实是“图灵机（ Turing machine）”，如果一定要加上“模型”，可以写“图灵机模型”。
+
+“图灵模型（Turing model、Turing's model 、Turing pattern）”是生物学术语，虽然这个术语也和Alan Turing有关。
+
+我们用搜索引擎搜turing model，得到：
+
+<img width="1080" height="619" alt="image" src="https://github.com/user-attachments/assets/188e0bbd-79b5-4665-a8b5-384e497abf98" />
+
+排在第一位的是生物学的条目，同时，搜索引擎也意识到有可能其实是想搜“图灵机（ Turing machine）”。
+
+我们再来看著名书籍：
+
+*计算理论导引，Michael Sipser：
+
+<img width="1080" height="546" alt="image" src="https://github.com/user-attachments/assets/cc616675-becf-4a46-ae60-70c5182462fb" />
+
+用的是“图灵机”，也有“图灵机模型”，但全书无“图灵模型”。
+
+*自动机理论、语言和计算导论，John E.Hopcroft、Rajeev Motwani、Jeffrey D.Ullman：
+
+<img width="1080" height="463" alt="image" src="https://github.com/user-attachments/assets/9cf91e01-87cc-419a-a7a1-e1ed725d941e" />
+
+用的是“图灵机”，全书无“图灵模型”。
+
+如果掌握了足够多的资料，并且经过慎重考虑之后，决定还是叫“图灵模型”，那是可以的；如果只是大概知道这么个词，然后随手一用，这就不合适。
+
+如果有心寻找，用百度学术搜索“图灵模型”，也能搜到有发表在期刊上的论文在谈“图灵机”时说“图灵模型”，但不能以此为理由。我推测，这些文章的作者如果有人提醒或经过慎重考虑，会改过来的。
+
+我之前也写过文章谈类似问题：
+
+*就喜欢把“不变式”叫“固定规则”，不行吗，https://mp.weixin.qq.com/s/agiQ6lC5uko3-Wqew8IehQ
+
+*《实现领域驱动设计》中译本和原文的评点纠错合集，https://mp.weixin.qq.com/s/DYop7IcxuFOO_CSTbgE5Eg，在里面搜“深度地递归遍历”。
+
+*《分析模式》漫谈，http://umlchina.com/url/aptalk.html，评点了之前的中译本中出现的用词不当。
+
+④图灵模型解决问题的思路：有限的有序指令序列
+
+把图灵和冯·诺依曼搞混了吧？
+
+（待续）
